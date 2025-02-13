@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 100vh;
+            display: grid;
+            place-items: center;
+        }
+        section{
+            width: 80vw;
+            height: 80vh;
+            background-color: beige;
+            border: black 2px solid;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .box{            
+            width: 400px;
+            height: 400px;
+        }
+        .box:nth-child(1){
+            background-color: blue;
+            color: white;
+            font-size: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .box:nth-child(1).circle{
+            border-radius: 50%;
+            background-color: #FF6C37;
+        }
+        .box:nth-child(2){            
+            background-image: url('https://images.pexels.com/photos/1906830/pexels-photo-1906830.jpeg?auto=compress&cs=tinysrgb');
+           
+            background-position: center;
+            background-size: cover;
+        }
+        .box:nth-child(2).cat{
+            background-image: url('https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg?auto=compress&cs=tinysrgb');           
+        }
+    </style>
+</head>
+<body>
+    <section>
+       <div class="box"></div>
+       <div class="box cat"></div>
+    </section>
+    <script>
+        const boxes = document.getElementsByClassName('box');
+        let count = 0;
+        console.log(boxes)
+        const rightBox = boxes[1];
+        const leftBox = boxes[0];
+        leftBox.textContent = count;
+        rightBox.addEventListener("dblclick", () => {
+            rightBox.classList.toggle("cat");
+        })
+        leftBox.addEventListener("click", () => {
+            leftBox.classList.toggle("circle");
+            count+=5;           
+            leftBox.textContent = count;
+        })
+    </script>
+</body>
+</html>
