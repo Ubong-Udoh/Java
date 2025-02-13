@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Font Awesome Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Google font link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", serif;
+        }
+        section {
+            /* background-color: blueviolet; */
+        }
+        .purple_div{
+            height: 35vh;
+            width: 100vw;
+            background-color: #301534;            
+        }
+        .ash_div{
+            height: 65vh;
+            width: 100vw;
+            background-color: #F9EEFF;
+        }
+        .accordion{
+            background-color: #fff;
+            position: fixed;
+            width: 40vw;
+            padding: 20px;
+            border-radius: 25px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        section{
+            display: grid;
+            place-items: center;
+        }
+        .title{
+            color: #37173C;
+            font-size: 30px;
+        }
+        .top{
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .fa-star{
+            font-size: 26px;
+            color: #B02EE8;
+        }
+        .question{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+        .answer{
+            font-size: 14px;
+            color: #817180; 
+            margin-top: 10px;   
+            display: none;        
+        }
+        .answer.show{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <section>        
+        <div class="purple_div"></div>
+        <div class="ash_div"></div>
+        <div class="accordion">
+            <div class="top">
+                <i class="fa fa-star " aria-hidden="true"></i>
+                <h1 class="title">FAQs</h1>
+            </div>
+            <div class="faqs">
+                <div class="faq">
+                    <div class="question">
+                        <h4>What is frontend mentor, and how will it help me?</h4>
+                        <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                    </div>
+                    <p class="answer">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore sit cumque accusantium voluptatem possimus voluptas magnam, qui perspiciatis laudantium porro.</p>
+                </div>
+                <div class="faq">
+                    <div class="question">
+                        <h4>Why are you at Netisens ICT?</h4>
+                        <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                    </div>
+                    <p class="answer">ipisicingsimus voluptas magnam, qui perspiciatis laudantium porro.</p>
+                </div>
+                <div class="faq">
+                    <div class="question">
+                        <h4>What is Cyber Security</h4>
+                        <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                    </div>
+                    <p class="answer">Cyber security is the study ethical......</p>
+                </div>
+                <div class="faq">
+                    <div class="question">
+                        <h4>What is Web Development?</h4>
+                        <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                    </div>
+                    <p class="answer">Web development is the study of web design</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        const faqs = document.querySelectorAll('.faq');
+        // console.log(faqs);
+        for(let faq of faqs){
+            faq.addEventListener('click', () => {
+                const answer = faq.querySelector('.answer');
+                
+                const icon = faq.querySelector('.fa');
+                if(icon.classList.contains('fa-plus-circle')){
+                    icon.classList.remove('fa-plus-circle');
+                    icon.classList.add('fa-minus-circle');
+                }else{
+                    icon.classList.replace('fa-minus-circle', 'fa-plus-circle');
+                }
+                console.log(icon)
+                answer.classList.toggle('show');
+                console.log(answer);
+            })
+        }
+
+        // for(let i = 0; i < faqs.length; i++){
+        //     console.log(faqs[i].innerHTML);
+        // }
+    </script>
+</body>
+</html>
