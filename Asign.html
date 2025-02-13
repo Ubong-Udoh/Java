@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM </title>
+    <style>  
+   body{
+     display: grid;
+     place-items:center;
+      height:100vh ;
+   }
+   button{
+      background-color: blue;
+   }
+    </style>
+</head>
+<body>
+
+<section class="wrapper">
+<div id="box"></div>
+ <button id="icr" >increment</button>
+ <button id="dcr">decrement</button>
+ <button id="reset">reset</button>
+</section>
+<script>   
+ let count = 0 ;
+ let incrementButton = document.getElementById("icr");
+ let decrementbutton = document.getElementById("dcr");
+ let resetbutton = document.getElementById("reset")
+ let box = document.getElementById("box")
+ box.style.width ="300px";
+ box.style.height = "300px";
+ box.style.backgroundColor = "green"; 
+ box.textContent = count 
+ box.style.color = "white";
+ box.style.fontSize = "50px";
+ box.style.display = "flex";
+ box.style.justifyContent = "center";
+ box.style.alignItems = "center";
+ box.style.borderRadius = "50%";
+ box.style.border = "10px solid black";
+ box.style.cursor = "pointer";
+ 
+
+ const incrementcount = () => {
+   if(count >= 50){
+      alert("count can cannot be more than 50")
+   }else{                                                  
+    count++;
+    box.textContent = count;}
+    console.log("i am stubborn")
+ }
+  incrementButton.addEventListener("click",incrementcount); 
+ 
+  
+  const decrementcount = () => {
+   if(count <= 0){
+   alert('count cannot be negative')
+    console.log('before return')
+    return; 
+    console.log("after return");
+   }
+    count--;
+    box.textContent = count;
+ }
+  decrementbutton.addEventListener("click",decrementcount); 
+    
+  resetbutton.addEventListener("click", function(){
+   count = 0
+   box.textContent = count;  
+  })
+</script>
+</body>
+</html> 
