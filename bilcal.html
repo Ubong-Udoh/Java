@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill Splitter</title>
+
+    <!-- Font-awesome icons link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="bilcal.css">
+</head>
+<body>
+    <h1 class="split">SPLI <br> TTER</h1>
+    <div class="container">
+        <div class="left">
+            <div >
+                <label for="">Bill</label>
+                <div  class="input-wrap">
+                    <i class="fa fa-usd" aria-hidden="true"></i>
+                    <input type="text" placeholder="Enter your Bill">
+                </div>
+            </div>
+            <div>
+                <p>Select Tip %</p>
+                <div class="btn-group">
+                    <button class="percent">5%</button>
+                    <button class="percent">10%</button>
+                    <button class="percent">15%</button>
+                    <button class="percent">25%</button>
+                    <button class="percent">50%</button>
+                    <button id="custom">Custom</button>
+                </div>
+            </div>
+            <div>
+                <label for="">Number of People</label>
+                <div  class="input-wrap">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <input type="text" value="1">
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="top">
+                <div>
+                    <div>
+                        <p>Tip Amount</p>
+                        <span>/ person</span>
+                    </div>
+                    <div class="amount">$ 0.00</div>
+                </div>
+                <div>
+                    <div>
+                        <p>Total Amount</p>
+                        <span>/ person</span>
+                    </div>
+                    <div class="amount">$ 0.00</div>
+                </div>
+            </div>
+            <button id="reset" class="">Reset</button>
+        </div>
+    </div>
+</body>
+</html>
